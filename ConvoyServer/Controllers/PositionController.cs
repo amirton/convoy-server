@@ -30,6 +30,7 @@ namespace ConvoyServer.Controllers
             var objNotification = new
             {
                 registration_ids = IdController.registeredIds.ToArray(),
+                priority = "high",
                 data = new JavaScriptSerializer().Deserialize<object>(value),
                 time_to_live = 0
             };
