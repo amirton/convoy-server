@@ -30,7 +30,8 @@ namespace ConvoyServer.Controllers
             var objNotification = new
             {
                 registration_ids = IdController.registeredIds.ToArray(),
-                data = new JavaScriptSerializer().Deserialize<object>(value)
+                data = new JavaScriptSerializer().Deserialize<object>(value),
+                time_to_live = 0
             };
 
             string jsonNotificationFormat = Newtonsoft.Json.JsonConvert.SerializeObject(objNotification);
